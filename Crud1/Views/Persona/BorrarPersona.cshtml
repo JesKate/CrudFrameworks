@@ -1,0 +1,18 @@
+﻿@model Crud1.Models.PersonaModel
+@{
+	/**/
+
+	ViewBag.Title = "Borrar Persona";
+}
+
+<h4>¿Está seguro que desea eliminar la Persona?</h4>
+
+
+@using (Html.BeginForm("ConfirmandoBorrar", "Persona", FormMethod.Post))
+{
+	@Html.Hidden("id", (int)ViewBag.iduper)
+	<div class="form-group">
+		<button type="submit" class="btn btn-sucess">Borrar</button>
+		<button type="reset" onclick="location.href='/Persona/MostrarPersonas'" class="btn btn success">Cancelar</button>
+	</div>
+}

@@ -1,0 +1,29 @@
+﻿@model Crud1.Models.PersonaModel
+@{
+	ViewBag.Title = "Mostrar Personas";
+}
+<h2>Personas</h2>
+
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>Nombre</th>
+			<th>Cédula</th>
+			<th>Teléfono</th>
+			<th>Dirección</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model.lista)
+		{
+		<tr>
+			<td>@Html.DisplayFor(x => item.Nombre)</td>
+			<td>@Html.DisplayFor(x => item.Cedula)</td>
+			<td>@Html.DisplayFor(x => item.Telefono)</td>
+			<td>@Html.DisplayFor(x => item.Direccion)</td>
+			<td>@Html.ActionLink("Actualizar", "ModificarPersona", new { id = item.Id }, new { @class = "btn" })</td>
+			<td>@Html.ActionLink("Borrar", "BorrarPersona", new { id = item.Id }, new { @class = "btn" })</td>
+		</tr>
+		}
+	</tbody>
+</table>

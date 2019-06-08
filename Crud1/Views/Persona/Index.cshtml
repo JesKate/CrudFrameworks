@@ -1,0 +1,34 @@
+﻿@model Crud1.Models.PersonaModel
+@{
+	ViewBag.Title = "Index";
+}
+<h2>Registro de Personas</h2>
+
+@using (Html.BeginForm("Index", "Persona" +"", FormMethod.Post))
+{
+	<div class="form-group">
+		@Html.LabelFor(n => n.Nombre)
+		@Html.TextBoxFor(n => n.Nombre, new { @class = "form-control", @placeholder = "Ingrese su nombre" })
+		@Html.ValidationMessageFor(n => n.Nombre, "", new { @class = "form-text text-danger" })
+	</div>
+	<div class="form-group">
+		@Html.LabelFor(n => n.Cedula)
+		@Html.TextBoxFor(n => n.Cedula, new { @class = "form-control", @placeholder = "Ingrese No. de Cedula" })
+		@Html.ValidationMessageFor(n => n.Cedula, "", new { @class = "form-text text-danger" })
+	</div>
+	<div class="form-group">
+		@Html.LabelFor(t => t.Telefono)
+		@Html.TextBoxFor(t => t.Telefono, new { @class = "form-control", @placeholder = "Ingrese No. de Telefono" })
+		@Html.ValidationMessageFor(t => t.Telefono, "", new { @class = "form-text text-danger" })
+	</div>
+	<div class="form-group">
+		@Html.LabelFor(d => d.Direccion)
+		@Html.TextBoxFor(d => d.Direccion, new { @class = "form-control", @placeholder = "Ingrese No. de Telefono" })
+		@Html.ValidationMessageFor(d => d.Direccion, "", new { @class = "form-text text-danger" })
+	</div>
+
+	<div class="form-group">
+		<button type="submit" class="btn btn-sucess">¡Reg&iacute;strate!</button>
+	</div>
+}
+
